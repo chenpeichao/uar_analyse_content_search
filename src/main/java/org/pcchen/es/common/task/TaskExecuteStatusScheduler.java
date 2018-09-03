@@ -20,12 +20,16 @@ public class TaskExecuteStatusScheduler {
 //    @Scheduled(cron="0 0 * * * ?")
     @Scheduled(fixedRate=1000*60*50)
     public void updateTaskFinishStatus() {
-        contentSearchService.executeData("20180701", "20180731", "UAR-000405_374");
+        contentSearchService.executeData("20180801", "20180831", "UAR-000161_540");
     }
 
+    /**
+     * 使用blockingqueue消费，此处定时任务废弃
+     */
 //    @Scheduled(cron="0 0 * * * ?")
-//    @Scheduled(fixedRate=1000*60*150)--对于本地数据库获取内容库中相关itemId的文章发布时间和文章媒体名称
-    public void updateArticlePublishFromMysql() {
-        contentSearchService.executeUpdateArticlePublishFromMysql();
-    }
+//    @Scheduled(fixedRate=1000*60*150)
+//    //--对于本地数据库获取内容库中相关itemId的文章发布时间和文章媒体名称
+//    public void updateArticlePublishFromMysql() {
+//        contentSearchService.executeUpdateArticlePublishFromMysql("UAR-000405_374");
+//    }
 }

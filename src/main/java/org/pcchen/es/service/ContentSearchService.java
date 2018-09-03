@@ -15,5 +15,5 @@ public interface ContentSearchService {
      */
     public void executeData(String startDate, String endDate, String at);
 
-    public void executeUpdateArticlePublishFromMysql();
+    public void executeUpdateArticlePublishFromMysql(String at);
 }

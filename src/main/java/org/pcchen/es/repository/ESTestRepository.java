@@ -16,4 +16,7 @@ import java.util.List;
 public interface ESTestRepository extends JpaRepository<ESTest, Integer> {
     @Query("from org.pcchen.es.domain.ESTest esTest where esTest.appAt = :appAt")
     public List<ESTest> findAllByAt(@Param("appAt")String appAt);
+
+    @Query("from org.pcchen.es.domain.ESTest esTest where esTest.appAt = :appAt and esTest.columnName is null")
+    public List<ESTest> findAllByAtAndColumnNameIsNotNull(@Param("appAt") String appAt);
 }
